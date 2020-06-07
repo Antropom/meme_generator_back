@@ -2,8 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const connection = require('./conf');
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(express.json());
 
@@ -12,6 +13,8 @@ app.use(
     extended: true,
   })
 );
+
+app.use(cors());
 
 // appel des photos disponible
 
